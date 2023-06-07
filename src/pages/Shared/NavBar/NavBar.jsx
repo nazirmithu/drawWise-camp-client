@@ -40,18 +40,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
-
-
-        // <div className="fixed w-full bg-white z-10 shadow-sm">
-        //     <div className="py-4 border-b-[1px]">
-        //         <div className="flex items-center justify-between gap-3 md:gap-0">
-        //     <div>
-        //         <img className='hidden md:block' src={logoImg} alt="" width='150' height='100'  />
-        //     </div>
-        //     <div>search</div>
-        //     <div>menu</div>
-        //         </div>
-        //     </div>
-        // </div>
