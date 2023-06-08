@@ -1,0 +1,110 @@
+[
+    {
+        "_id": 1,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Basic Drawing",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 55,
+        "price": 50
+    },
+    {
+        "_id": 2,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Pen Drawing",
+        "instructor_name": "Benjamin Wong",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 60,
+        "price": 60
+    },
+    {
+        "_id": 3,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Colouring",
+        "instructor_name": "Sophia Martinez",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 65,
+        "price": 40
+    },
+    {
+        "_id": 4,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Sketching",
+        "instructor_name": "Isabella Kim",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 50,
+        "price": 45
+    },
+    {
+        "_id": 5,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Water Painting",
+        "instructor_name": "Ava Johnson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 70,
+        "price": 55
+    },
+    {
+        "_id": 6,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Canvas Printing",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 58,
+        "price": 65
+    },
+    {
+        "_id": 7,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Oil Painting",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 30,
+        "price": 75
+    },
+    {
+        "_id": 8,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Tattoo Art",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 35,
+        "price": 90
+    },
+    {
+        "_id": 9,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Mural Painting",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 40,
+        "price": 80
+    },
+    {
+        "_id": 10,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Acrylic Painting",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 45,
+        "price": 85
+    },
+    {
+        "_id": 11,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Calligraphy",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 25,
+        "price": 20
+    },
+    {
+        "_id": 12,
+        "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
+        "class_name": "Basic Painting",
+        "instructor_name": "Emily Larson",
+        "instructor_image": "Emily Larson",
+        "number_of_student": 38,
+        "price": 70
+    }
+]
