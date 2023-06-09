@@ -7,6 +7,7 @@ const NavBar = () => {
         <li><Link to='/menu'>Instructors</Link></li>
         <li><Link to='/order/salad'>Classes</Link></li>
         <li><Link to='/order/salad'>Dashboard </Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white max-w-screen-xl">

@@ -1,6 +1,6 @@
 [
     {
-        "_id": 1,
+        "_id": "6482f6e5da297067cc0dbbbe",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Basic Drawing",
         "instructor_name": "Emily Larson",
@@ -9,7 +9,7 @@
         "price": 50
     },
     {
-        "_id": 2,
+        "_id": "6482f6e5c96a06cbf6fca261",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Pen Drawing",
         "instructor_name": "Benjamin Wong",
@@ -18,7 +18,7 @@
         "price": 60
     },
     {
-        "_id": 3,
+        "_id": "6482f6e59c7b71e80506178c",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Basic Painting",
         "instructor_name": "Noah Thompson",
@@ -27,7 +27,7 @@
         "price": 70
     },
     {
-        "_id": 4,
+        "_id": "6482f6e585e0862888b99c1b",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Colouring",
         "instructor_name": "Sophia Martinez",
@@ -36,7 +36,7 @@
         "price": 40
     },
     {
-        "_id": 5,
+        "_id": "6482f6e529e71e899a25d21f",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Canvas Printing",
         "instructor_name": "Jackson Reynolds",
@@ -45,7 +45,7 @@
         "price": 65
     },
     {
-        "_id": 6,
+        "_id": "6482f6e5fffa011438b42cbb",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Sketching",
         "instructor_name": "Isabella Kim",
@@ -54,7 +54,7 @@
         "price": 45
     },
     {
-        "_id": 7,
+        "_id": "6482f6e5087add2a41e4d750",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Oil Painting",
         "instructor_name": "Gabriel Wilson",
@@ -63,7 +63,7 @@
         "price": 75
     },
     {
-        "_id": 8,
+        "_id": "6482f6e531a4d83a19ffd45b",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Water Painting",
         "instructor_name": "Ava Johnson",
@@ -72,7 +72,7 @@
         "price": 55
     },
     {
-        "_id": 9,
+        "_id": "6482f6e57cab5145d61dc34c",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Tattoo Art",
         "instructor_name": "Lucas Davis",
@@ -81,7 +81,7 @@
         "price": 90
     },
     {
-        "_id": 10,
+        "_id": "6482f6e5781bbef4cbc186d7",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Mural Painting",
         "instructor_name": "Mia Rodriguez",
@@ -90,7 +90,7 @@
         "price": 80
     },
     {
-        "_id": 11,
+        "_id": "6482f6e59f3c3aec7f56f630",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Acrylic Painting",
         "instructor_name": "Caleb Taylor",
@@ -99,7 +99,7 @@
         "price": 85
     },
     {
-        "_id": 12,
+        "_id": "6482f6e5a0cd97417bba7d74",
         "class_image": "https://i.ibb.co/JBw9rsX/cute-little-girl-painting-park.jpg",
         "class_name": "Calligraphy",
         "instructor_name": "Lily Nguyen",
