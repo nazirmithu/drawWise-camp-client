@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import GoogleLogin from '../Shared/GoogleLogin/GoogleLogin';
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, profileUpdate } = useContext(AuthContext);
@@ -76,12 +77,14 @@ const SignUp = () => {
                             {errors.password?.type === 'required' && <p className="text-red-600">password is required</p>}
                             {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                             {errors.password?.type === 'pattern' && <p className="text-red-600">Password must one uppercase, one lowercase, one number, one special character</p>}
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                            <div className="divider">SignUp With Social Accounts</div>
+                            <GoogleLogin></GoogleLogin>
                             <p className='my-4 text-center'>Already Have an Account? <Link className='text-rose-600 font-bold' to='/login'>Login</Link></p>
                         </div>
                     </form>

@@ -7,7 +7,12 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <div>
+            <span className="loading loading-bars loading-xs"></span>
+            <span className="loading loading-bars loading-sm"></span>
+            <span className="loading loading-bars loading-md"></span>
+            <span className="loading loading-bars loading-lg"></span>
+        </div>
     }
     if (user) {
         return children;
@@ -15,7 +20,7 @@ const PrivateRoute = ({ children }) => {
 
     if (!user) {
         return <Navigate to="/login" replace state={{ from: location, search: location.search }}></Navigate>;
-    }   
+    }
 };
 
 export default PrivateRoute;

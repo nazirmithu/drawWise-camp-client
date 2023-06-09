@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import GoogleLogin from '../Shared/GoogleLogin/GoogleLogin';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -58,13 +59,15 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="Enter Your Password" {...register("password", { required: true })} className="input input-bordered" />
                                 {errors.password && <span className="text-red-600">Password is required</span>}
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
-                                <p className='my-4 text-center'>New to DrawWiseCamp? <Link className='text-rose-600 font-bold' to='/signup'>Sign Up</Link></p>
+                                <label className="label">
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                                <div className="divider">Login With Social Accounts</div>
+                                <GoogleLogin></GoogleLogin>
+                                <p className='my-2 text-center'>New to DrawWiseCamp? <Link className='text-rose-600 font-bold' to='/signup'>Sign Up</Link></p>
                             </div>
                         </form>
                     </div>
