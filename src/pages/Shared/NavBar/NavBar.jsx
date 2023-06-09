@@ -1,13 +1,30 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
+    const { user, handleSignOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        handleSignOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Instructors</Link></li>
         <li><Link to='/order/salad'>Classes</Link></li>
         <li><Link to='/order/salad'>Dashboard </Link></li>
-        <li><Link to='/login'>Login</Link></li>
+
+
+        {
+            user ? <>
+                <li><Link onClick={handleLogOut}>LogOut</Link></li>
+            </> : <>
+                <li><Link to='/login'>Login</Link></li>
+            </>
+        }
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white max-w-screen-xl">
@@ -29,13 +46,15 @@ const NavBar = () => {
                     {navItems}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <div className="avatar">
-                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src="https://i.ibb.co/2WcM5pT/handsome-businessman-suit-glasses-cross-arms-chest-look.jpg" />
+            {
+                user ? <div className="navbar-end">
+                    <div className="avatar">
+                        <div className="w-10 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img src={user.photoURL} />
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div> : ''
+            }
         </div>
     );
 };

@@ -3,17 +3,34 @@ import signUpAnimation from '../../../public/signup.json'
 import Lottie from "lottie-react";
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-const {createUser}=useContext(AuthContext);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, profileUpdate } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
-        .then(result=>{
-            const loggedUser= result.user;
-            console.log(loggedUser)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                profileUpdate(data.name, data.photoURL)
+                    .then(() => {
+                        console.log('user profile updated');
+                        reset();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'User created successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        navigate('/');
+                    })
+                    .catch(error => console.log(error))
+            })
     };
 
     return (
@@ -45,7 +62,7 @@ const {createUser}=useContext(AuthContext);
                                 <span className="label-text">Photo URL</span>
                             </label>
                             <input type="photo" placeholder="Enter Your Photo URL" {...register("photo", { required: true })} className="input input-bordered" />
-                            {errors.photo && <span className="text-red-600">Photo is required</span>}
+                            {errors.photo && <span className="text-red-600">Photo URL is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -64,7 +81,8 @@ const {createUser}=useContext(AuthContext);
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                        <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <p className='my-4 text-center'>Already Have an Account? <Link className='text-rose-600 font-bold' to='/login'>Login</Link></p>
                         </div>
                     </form>
                 </div>

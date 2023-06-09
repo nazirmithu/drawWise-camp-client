@@ -3,15 +3,34 @@ import loginAnimation from '../../../public/login.json'
 import Lottie from "lottie-react";
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-
+import Swal from 'sweetalert2'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { signIn } = useContext(AuthContext);
+    const { handleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/'
 
     const onSubmit = data => {
         console.log(data)
-
+        handleSignIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true })
+            })
     };
 
 
@@ -44,7 +63,8 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <p className='my-4 text-center'>New to DrawWiseCamp? <Link className='text-rose-600 font-bold' to='/signup'>Sign Up</Link></p>
                             </div>
                         </form>
                     </div>
