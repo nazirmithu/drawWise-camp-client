@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaBookOpen, FaBookReader, FaHome, FaWallet } from 'react-icons/fa';
 
 const Dashboard = () => {
@@ -10,17 +10,17 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side ">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 h-full bg-red-200 text-base-content">
 
-                    <li><Link><FaHome/>User Home</Link></li>
-                    <li><Link><FaWallet/>Payment History</Link></li>
-                    <li><Link to='/dashboard/myclasses'><FaBookOpen />My Selected Classes</Link></li>
-                    <li><Link><FaBookReader />My Enrolled Classes</Link></li>
+                    <li><NavLink to='/dashboard/home'><FaHome/>User Home</NavLink></li>
+                    <li><NavLink to='/dashboard/mypayment'><FaWallet/>Payment History</NavLink></li>
+                    <li><NavLink to='/dashboard/myclasses'><FaBookOpen />My Selected Classes</NavLink></li>
+                    <li><NavLink to='/dashboard/myenroll'><FaBookReader />My Enrolled Classes</NavLink></li>
                     <div className="divider"></div>
-                    <li><Link to='/'><FaHome/>Home</Link></li>
-                    <li><Link to='/allclasses'><FaBookReader/> All Classes</Link></li>
+                    <li><NavLink to='/'><FaHome/>Home</NavLink></li>
+                    <li><NavLink to='/allclasses'><FaBookReader/>All Classes</NavLink></li>
                 </ul>
 
             </div>
