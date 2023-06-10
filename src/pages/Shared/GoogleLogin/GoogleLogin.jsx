@@ -7,6 +7,7 @@ const GoogleLogin = () => {
     const { googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+
     const from = location.state?.from?.pathname || '/'
 
     const handleGooglePopup = () => {
@@ -24,10 +25,8 @@ const GoogleLogin = () => {
                     body: JSON.stringify(saveUser)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        if (data.insertedId) {
-                            navigate(from, { replace: true })
-                        }
+                    .then(() => {
+                        navigate(from, { replace: true })
                     })
             })
             .catch(error => {
