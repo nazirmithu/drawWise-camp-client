@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useSelectedClass from "../../components/hooks/useSelectedClass";
 
 
 const Classes = ({ item }) => {
@@ -9,6 +10,8 @@ const Classes = ({ item }) => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [, refetch] = useSelectedClass();
+
 
     const handleSelect = item => {
         console.log(item)
@@ -24,6 +27,7 @@ const Classes = ({ item }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -49,6 +53,8 @@ const Classes = ({ item }) => {
             })
         }
     }
+
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={class_image} alt="Shoes" /></figure>
