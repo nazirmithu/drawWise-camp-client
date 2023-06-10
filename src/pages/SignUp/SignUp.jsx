@@ -57,6 +57,8 @@ const SignUp = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                    <p className='text-5xl text-center font-serif'>Sign Up</p>
+                        <p className='font-serif text-center'>Welcome to DrawWiseCamp</p>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>

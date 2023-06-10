@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import PopularClasses from "../pages/PopularClasses/PopularClasses";
 import SignUp from "../pages/SignUp/SignUp";
+import AllClasses from "../pages/AllClasses/AllClasses";
 
 const router = createBrowserRouter([
     {
@@ -15,13 +16,21 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:'/popularclass',
-                element:<PopularClasses></PopularClasses>
+                path: '/popularclass',
+                element: <PopularClasses></PopularClasses>
+            },
+            {
+                path:'/allclasses',
+                element:<AllClasses></AllClasses>
             }
         ]
     },
-    {path:'/login', element:<Login></Login>},
-    {path:'/signup', element: <SignUp></SignUp>}
+    {
+        path: '/login', element: <Login></Login>
+    },
+    {
+        path: '/signup', element: <SignUp></SignUp>
+    }
 ]);
 
 export default router;

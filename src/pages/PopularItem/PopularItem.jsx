@@ -10,9 +10,6 @@ const PopularItem = ({ item }) => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">Course Name: {class_name}</h2>
                 <p className="font-medium">Price: {price}</p>
-                <div className="card-actions">
-                    <button className="btn btn-primary">Enrol Now</button>
-                </div>
             </div>
         </div>
     );
