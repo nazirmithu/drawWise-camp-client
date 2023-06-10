@@ -2,9 +2,11 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaBookOpen } from 'react-icons/fa';
+import useSelectedClass from '../../../components/hooks/useSelectedClass';
 
 const NavBar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
+    const [cart] = useSelectedClass();
 
     const handleLogOut = () => {
         handleSignOut()
@@ -20,8 +22,8 @@ const NavBar = () => {
         <li>
             <Link to='/'>
                 <button className="btn">
-                    <FaBookOpen/>
-                    <div className="badge badge-secondary">+0</div>
+                    <FaBookOpen />
+                    <div className="badge badge-secondary">+{cart?.length || 0}</div>
                 </button>
             </Link>
         </li>
