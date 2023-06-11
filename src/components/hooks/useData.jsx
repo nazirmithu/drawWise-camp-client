@@ -6,7 +6,7 @@ const useData = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/popularclass')
+        fetch('http://localhost:5000/users')
             .then(res => res.json())
             .then(data => {
                 setPopularData(data);
