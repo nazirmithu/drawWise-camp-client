@@ -1,11 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaBookOpen, FaBookReader, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
 import useSelectedClass from "../components/hooks/useSelectedClass";
+import useAdmin from "../components/hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useSelectedClass();
 
-    const isAdmin = true;
+    // const isAdmin = true;
+
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="drawer lg:drawer-open">
