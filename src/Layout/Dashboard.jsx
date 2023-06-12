@@ -1,14 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaBookOpen, FaBookReader, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
 import useSelectedClass from "../components/hooks/useSelectedClass";
+import useInstructor from "../components/hooks/useInstructor";
 import useAdmin from "../components/hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useSelectedClass();
 
     // const isAdmin = true;
+    // const instructor = true;
 
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -28,6 +31,11 @@ const Dashboard = () => {
                             <li><NavLink to='/dashboard/manageclass'><FaBookReader />Manage Classes</NavLink></li>
                             <li><NavLink to='/dashboard/allusers'><FaUsers />Manage Users</NavLink></li>
 
+                        </> : 
+                        isInstructor ? <>
+                            <li><NavLink to='/dashboard/home'><FaHome />Instructor Home</NavLink></li>
+                            <li><NavLink to='/dashboard/manageclass'><FaBookReader />My Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/allusers'><FaUsers />Total Enrolled Students</NavLink></li>
                         </> : <>
 
                             <li><NavLink to='/dashboard/home'><FaHome />User Home</NavLink></li>

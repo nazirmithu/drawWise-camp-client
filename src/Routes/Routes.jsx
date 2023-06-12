@@ -39,6 +39,9 @@ const router = createBrowserRouter([
             {
                 path:'allusers',
                 element:<AllUsers></AllUsers>
+            },
+            {
+                path:''
             }
         ]
     },
