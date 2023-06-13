@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const MyClasses = () => {
     const [cart, refetch] = useSelectedClass();
-    console.log(cart);
+    // console.log(cart);
     const total = cart.reduce((sum, item) => item.price + sum, 0);
     const price = parseFloat(total.toFixed(2))
 

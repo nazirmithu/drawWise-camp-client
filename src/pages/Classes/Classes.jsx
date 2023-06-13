@@ -64,7 +64,7 @@ const Classes = ({ item }) => {
                 <p className="font-semibold">Available Seats: {available_seats}</p>
                 <p className="font-semibold">Price: {price}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleSelect(item)} className="btn btn-primary">Select Course</button>
+                    <button onClick={() => handleSelect(item)} className="btn btn-outline btn-success">Select Course</button>
                 </div>
             </div>
         </div>

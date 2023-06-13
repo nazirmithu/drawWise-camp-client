@@ -18,15 +18,19 @@ const NavBar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Instructors</Link></li>
         <li><Link to='/allclasses'>Classes</Link></li>
-        <li><Link to='/order/salad'>Dashboard </Link></li>
-        <li>
-            <Link to='/dashboard/myclasses'>
-                <button className="btn">
-                    <FaBookOpen />
-                    <div className="badge badge-secondary">+{cart?.length || 0}</div>
-                </button>
-            </Link>
-        </li>
+        {
+            user ? <>
+                <li><Link to='/order/salad'>Dashboard </Link></li>
+                <li>
+                    <Link to='/dashboard/myclasses'>
+                        <button className="btn">
+                            <FaBookOpen />
+                            <div className="badge badge-secondary">+{cart?.length || 0}</div>
+                        </button>
+                    </Link>
+                </li>
+            </> : ''
+        }
 
         {
             user ? <>

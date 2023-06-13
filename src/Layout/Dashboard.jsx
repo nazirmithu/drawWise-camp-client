@@ -25,28 +25,31 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-red-200 text-base-content">
 
-                    {
-                        isAdmin ? <>
-                            <li><NavLink to='/dashboard/home'><FaHome />Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/manageclass'><FaBookReader />Manage Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/allusers'><FaUsers />Manage Users</NavLink></li>
+                   
+                    {isAdmin ? <>
+                        <li><NavLink to='/dashboard/home'><FaHome />Admin Home</NavLink></li>
+                        <li><NavLink to='/dashboard/manageclass'><FaBookReader />Manage Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/allusers'><FaUsers />Manage Users</NavLink></li>
 
-                        </> : 
+                    </> :
+
                         isInstructor ? <>
                             <li><NavLink to='/dashboard/home'><FaHome />Instructor Home</NavLink></li>
-                            <li><NavLink to='/dashboard/manageclass'><FaBookReader />My Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/allusers'><FaUsers />Total Enrolled Students</NavLink></li>
-                        </> : <>
-
-                            <li><NavLink to='/dashboard/home'><FaHome />User Home</NavLink></li>
-                            <li><NavLink to='/dashboard/mypayment'><FaWallet />Payment History</NavLink></li>
-                            <li>
-                                <NavLink to='/dashboard/myclasses'><FaBookOpen />My Selected Classes
-                                    <span className="badge badge-secondary">+{cart?.length || 0}</span>
-                                </NavLink>
-                            </li>
-                            <li><NavLink to='/dashboard/myenroll'><FaBookReader />My Enrolled Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/myclass'><FaBookReader />My Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/addclass'><FaUsers />Add Class</NavLink></li>
                         </>
+                            :
+                            <>
+
+                                <li><NavLink to='/dashboard/home'><FaHome />User Home</NavLink></li>
+                                <li><NavLink to='/dashboard/mypayment'><FaWallet />Payment History</NavLink></li>
+                                <li>
+                                    <NavLink to='/dashboard/myclasses'><FaBookOpen />My Selected Classes
+                                        <span className="badge badge-secondary">+{cart?.length || 0}</span>
+                                    </NavLink>
+                                </li>
+                                <li><NavLink to='/dashboard/myenroll'><FaBookReader />My Enrolled Classes</NavLink></li>
+                            </>
                     }
 
 

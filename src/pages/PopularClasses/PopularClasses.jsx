@@ -16,7 +16,7 @@ const PopularClasses = () => {
                     ></PopularItem>)
                 }
             </div>
-            <Link to='/allclasses'><button  className="btn btn-primary mt-8">View More Classes</button></Link>
+            <Link to='/allclasses'><button  className="btn btn-outline btn-success mt-8">View More Classes</button></Link>
             
         </div>
     );
