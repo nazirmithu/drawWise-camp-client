@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 import axios from "axios";
+import { getRole } from "../components/api/auth";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -9,6 +10,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [role, setRole] = useState(null);
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
@@ -16,6 +18,13 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
+
+    useEffect(() => {
+        if (user) {
+            getRole(user.email)
+                .then(data => setRole(data))
+        }
+    }, [user])
 
     const handleSignIn = (email, password) => {
         setLoading(true);
@@ -68,7 +77,9 @@ const AuthProvider = ({ children }) => {
         handleSignIn,
         handleSignOut,
         googleSignIn,
-        profileUpdate
+        profileUpdate,
+        role,
+        setRole
     }
 
     return (

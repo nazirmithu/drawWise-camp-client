@@ -7,12 +7,11 @@ import useSelectedClass from "../../components/hooks/useSelectedClass";
 
 const Classes = ({ item }) => {
     const { _id, class_image, class_name, instructor_name, available_seats, price } = item;
-    const { user } = useContext(AuthContext);
+    const { user, role } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useSelectedClass();
-
-
+    console.log(role);
     const handleSelect = item => {
         console.log(item)
         if (user && user.email) {
@@ -57,15 +56,19 @@ const Classes = ({ item }) => {
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={class_image} alt="Shoes" /></figure>
+            <figure><img src={class_image} alt="" className="h-96"/></figure>
             <div className="card-body">
                 <h2 className="card-title">Course Name: {class_name}</h2>
                 <p className="font-semibold">Instructor Name: {instructor_name}</p>
                 <p className="font-semibold">Available Seats: {available_seats}</p>
-                <p className="font-semibold">Price: {price}</p>
-                <div className="card-actions justify-end">
-                    <button onClick={() => handleSelect(item)} className="btn btn-outline btn-success">Select Course</button>
-                </div>
+                <p className="font-semibold">Price: ${price}</p>
+                {
+                    role ? <div className="card-actions justify-end">
+                        <button onClick={() => handleSelect(item)} disabled className="btn btn-outline btn-success">Select Course</button>
+                    </div> : <div className="card-actions justify-end">
+                        <button onClick={() => handleSelect(item)} className="btn btn-outline btn-success">Select Course</button>
+                    </div>
+                }
             </div>
         </div>
     );

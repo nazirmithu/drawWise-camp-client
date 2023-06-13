@@ -1,7 +1,47 @@
+import Swal from "sweetalert2";
 import useData from "../../../components/hooks/useData";
-import { FcApproval, FcDisapprove, FcFeedback } from "react-icons/fc";
 const ManageClass = () => {
     const [allData] = useData();
+    const handleApprove = id => {
+        fetch(`http://localhost:5000/allData/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+    const handleDeny = id => {
+        console.log(id)
+        fetch(`http://localhost:5000/allData/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+
 
     return (
         <div>
@@ -45,13 +85,13 @@ const ManageClass = () => {
                                 <td>{item.available_seats}</td>
                                 <td>{item.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-lg"><FcApproval /></button>
+                                    <button onClick={() => handleApprove(item._id)} className="btn btn-outline btn-success btn-sm">Approve</button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-ghost btn-lg"><FcDisapprove /></button>
+                                    <button onClick={() => { handleDeny(item._id) }} className="btn btn-outline btn-info btn-sm">Deny</button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-ghost btn-lg"><FcFeedback /></button>
+                                    <button className="btn btn-outline btn-error btn-sm">Feedback</button>
                                 </td>
                             </tr>)
                         }
