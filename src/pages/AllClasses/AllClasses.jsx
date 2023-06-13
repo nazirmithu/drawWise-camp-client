@@ -3,7 +3,7 @@ import Classes from "../Classes/Classes";
 import classImg1 from '../../assets/class-1.jpg';
 
 const AllClasses = () => {
-    const [popularData] = useData();
+    const [allData] = useData();
 
     return (
         <div>
@@ -11,7 +11,7 @@ const AllClasses = () => {
             <p className="mt-20 font-bold text-4xl text-center">All Classes</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24">
                 {
-                    popularData.map(item => <Classes
+                    allData.map(item => <Classes
                         key={item._id}
                         item={item}
                     ></Classes>)

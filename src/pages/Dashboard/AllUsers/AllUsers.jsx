@@ -78,7 +78,7 @@ const AllUsers = () => {
                                     user.role === 'admin' ? "admin" : <button onClick={() => { handleMakeAdmin(user) }} className="btn btn-ghost bg-orange-600 text-white"><FaUserShield /></button>
                                 }</td>
                                 <td>{
-                                    user.role === 'instructor' ? 'instructor' : <button onClick={() => { handleMakeInstructor(user) }} className="btn btn-ghost bg-orange-600 text-white"><FaChalkboardTeacher></FaChalkboardTeacher></button>
+                                    user.role === 'instructor' ? 'instructor' : <button onClick={() => { handleMakeInstructor(user) }} className="btn btn-ghost bg-orange-600 text-white"><FaChalkboardTeacher/></button>
                                 }</td>
                             </tr>)
                         }
