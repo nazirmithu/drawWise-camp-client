@@ -35,7 +35,7 @@ const GoogleLogin = () => {
     }
     return (
         <div className="text-center">
-            <button onClick={handleGooglePopup} className="btn btn-outline btn-success gap-2"><FaGoogle /> Continue with Google</button>
+            <button onClick={handleGooglePopup} className="btn btn-success gap-2"><FaGoogle /> Continue with Google</button>
         </div>
     );
 };

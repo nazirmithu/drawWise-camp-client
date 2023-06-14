@@ -50,32 +50,32 @@ const AddClass = () => {
             <h2 className="text-4xl font-serif mb-20 text-center">Add New Class</h2>
             <form onSubmit={handleSubmit(onSubmit)} className='p-8 border rounded-2xl shadow-lg ml-10'>
 
-                <input className="mb-2 input input-bordered w-1/2"
+                <input className="mb-2 input input-bordered "
                     {...register("class_name", { required: true })}
                     type="text"
                     placeholder="Class Name"
                 />
 
-                <input className="mb-2 input input-bordered w-1/2"
+                <input className="mb-2 input input-bordered"
                     {...register("available_seats", { required: true })}
                     type="number"
                     placeholder="Available seats"
                 />
 
-                <input className="input input-bordered w-1/2"
+                <input className="input input-bordered "
                     {...register("instructor_name", { required: true })}
                     type="text"
                     value={user?.displayName}
                     placeholder="Instructor Name" />
 
-                <input className="mb-2 input input-bordered w-1/2"
+                <input className="mb-2 input input-bordered"
                     {...register("instructor_email")}
                     type="email"
                     value={user?.email}
                     placeholder="Instructor Email"
                 />
 
-                <input className="mb-2 input input-bordered w-1/2"
+                <input className="mb-2 input input-bordered"
                     {...register("price", { required: true })}
                     defaultValue="" {...register("price", { required: true })}
                     type="number"
@@ -87,7 +87,7 @@ const AddClass = () => {
                     className="file-input file-input-bordered file-input-success w-full max-w-xs"
                 />
 
-                <input type="submit" value="Add Class" className="btn btn-block  btn-outline btn-success mt-8" />
+                <input type="submit" value="Add Class" className="btn btn-block  btn-success mt-8" />
             </form>
         </div>
     );

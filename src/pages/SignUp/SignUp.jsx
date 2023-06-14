@@ -16,7 +16,7 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser)
+                console.log(loggedUser)
 
                 profileUpdate(data.name, data.photoURL)
                     .then(() => {
@@ -63,7 +63,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Enter Your Name" {...register("name", { required: true })} className="input input-bordered w-full" />
+                            <input type="text" placeholder="Enter Your Name" {...register("name", { required: true })} className="input input-bordered" />
                             {errors.name && <span className="text-red-600">Name is required</span>}
                         </div>
                         <div className="form-control">

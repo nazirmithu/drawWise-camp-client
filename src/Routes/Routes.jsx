@@ -7,7 +7,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import Dashboard from "../Layout/Dashboard";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
-import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
@@ -17,6 +16,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
+import AllInstructor from "../pages/AllInstructor/AllInstructor";
+import InstructorClass from "../pages/Dashboard/InstructorClass/InstructorClass";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/allinstructor',
+                element: <AllInstructor></AllInstructor>
             },
             {
                 path: '/popularclass',
@@ -53,22 +58,30 @@ const router = createBrowserRouter([
             {
                 path: 'myclasses',
                 element: <MyClasses></MyClasses>
-            },      
+            },
             {
-                path:'instructorhome',
-                element:<InstructorHome></InstructorHome>
-            },      
+                path: 'instructorhome',
+                element: <InstructorRoute>
+                    <InstructorHome></InstructorHome>
+                </InstructorRoute>
+            },
+            {
+                path: 'instructorclass',
+                element: <InstructorRoute>
+                    <InstructorClass></InstructorClass>
+                </InstructorRoute>
+            },
             {
                 path: 'addclass',
                 element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
-                path:'adminhome',
-                element:<AdminHome></AdminHome>
+                path: 'adminhome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
             },
             {
                 path: 'allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AdminRoute></AdminRoute></AdminRoute>
             },
             {
                 path: 'manageclass',

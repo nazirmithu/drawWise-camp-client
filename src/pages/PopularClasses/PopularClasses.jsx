@@ -8,7 +8,7 @@ const PopularClasses = () => {
     return (
         <div className=" text-center">
             <p className="text-3xl font-bold text-center p-8 mt-20 mb-8 underline">Popular Classes</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20">
                 {
                     allData.slice(0, 6).map(item => <PopularItem
                         key={item._id}

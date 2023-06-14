@@ -1,14 +1,11 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaBookOpen, FaHome } from 'react-icons/fa';
-import useSelectedClass from '../../../components/hooks/useSelectedClass';
 import useAdmin from '../../../components/hooks/useAdmin';
 import useInstructor from '../../../components/hooks/useInstructor';
 
 const NavBar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
-    const [cart] = useSelectedClass();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
@@ -20,36 +17,24 @@ const NavBar = () => {
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/menu'>Instructors</Link></li>
+        <li><Link to='/allinstructor'>Instructors</Link></li>
         <li><Link to='/allclasses'>Classes</Link></li>
-        {
-            user ? <>
-                {/* <li><Link to='/order/salad'>Dashboard </Link></li> */}
-                <li>
-                    <Link to='/dashboard/myclasses'>
-                        <button className="btn">
-                            <FaBookOpen />
-                            <div className="badge badge-secondary">+{cart?.length || 0}</div>
-                        </button>
-                    </Link>
-                </li>
-            </> : ''
-        }
+
         {
             isAdmin ? <>
-                <li><Link to='/dashboard/adminhome'><FaHome />Dashboard</Link></li>
-               
+                <li><Link to='/dashboard/adminhome'>Dashboard</Link></li>
+
 
             </> :
                 isInstructor ? <>
-                    <li><Link to='/dashboard/instructorhome'><FaHome />Dashboard</Link></li>
-                   
-                </> :
-                  user?  <>
+                    <li><Link to='/dashboard/instructorhome'>Dashboard</Link></li>
 
-                        <li><Link to='/dashboard/userhome'><FaHome />Dashboard</Link></li>
-                        
-                    </>:''
+                </> :
+                    user ? <>
+
+                        <li><Link to='/dashboard/userhome'>Dashboard</Link></li>
+
+                    </> : ''
         }
 
         {
