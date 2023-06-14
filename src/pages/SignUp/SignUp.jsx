@@ -55,7 +55,7 @@ const SignUp = () => {
                         <Lottie animationData={signUpAnimation} />
                     </div>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card  shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <p className='text-5xl text-center font-serif'>Sign Up</p>
                         <p className='font-serif text-center'>Welcome to DrawWiseCamp</p>
@@ -63,7 +63,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Enter Your Name" {...register("name", { required: true })} className="input input-bordered" />
+                            <input type="text" placeholder="Enter Your Name" {...register("name", { required: true })} className="input input-bordered w-full" />
                             {errors.name && <span className="text-red-600">Name is required</span>}
                         </div>
                         <div className="form-control">

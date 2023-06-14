@@ -3,23 +3,26 @@ import { useContext, useState } from "react";
 import useAxiosSecure from "../../../components/hooks/useAxiosSecure";
 import { useEffect } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import './CheckoutForm.css'
 
-
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = ({ price, cart }) => {
     const stripe = useStripe();
     const element = useElements();
     const [cardError, setCardError] = useState('');
     const [axiosSecure] = useAxiosSecure()
     const [clientSecret, setClientSecret] = useState('');
+    const [transactionId, serTransactionId] = useState('');
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        axiosSecure.post('/create-payment-intent', { price })
-            .then(res => {
-                console.log(res.data.clientSecret)
-                setClientSecret(res.data.clientSecret)
-            })
-    }, [])
+        if (price > 0) {
+            axiosSecure.post('/create-payment-intent', { price })
+                .then(res => {
+                    console.log(res.data.clientSecret)
+                    setClientSecret(res.data.clientSecret)
+                })
+        }
+    }, [price, axiosSecure])
 
 
     const handleSubmit = async (event) => {
@@ -59,10 +62,31 @@ const CheckoutForm = ({ price }) => {
                 },
             },
         );
-            if(confirmError){
-                console.log(confirmError)
+        if (confirmError) {
+            console.log(confirmError)
+        }
+        console.log(paymentIntent);
+
+        if (paymentIntent.status === 'succeeded') {
+            serTransactionId(paymentIntent.id);
+            const payment = {
+                email: user?.email,
+                price,
+                date: new Date(),
+                transactionId: paymentIntent.id,
+                classId: cart.map(item => item.classId),
+                cartItems: cart.map(item => item._id),
+                class_name: cart.map(item => item.class_name)
             }
-console.log(paymentIntent);
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        // dsfds
+                    }
+                })
+        }
+
     }
 
     return (
@@ -84,12 +108,15 @@ console.log(paymentIntent);
                         },
                     }}
                 />
-                <button type="submit" className="btn btn-outline btn-success mt-4 btn-sm" disabled={!stripe || !clientSecret}>
+                <button type="submit" className="btn btn-success mt-4 btn-sm" disabled={!stripe || !clientSecret}>
                     Pay
                 </button>
             </form>
             {
                 cardError && <p className="text-red-600 ml-8">{cardError}</p>
+            }
+            {
+                transactionId && <p className="text-green-500">Transaction complete with transactionId: {transactionId}</p>
             }
         </>
     );

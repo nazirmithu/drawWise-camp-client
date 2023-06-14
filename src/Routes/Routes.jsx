@@ -14,12 +14,15 @@ import AdminRoute from "./AdminRoute";
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -40,20 +43,32 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
         children: [
             {
-                path: 'myclasses',
-                element: <MyClasses></MyClasses>
+                path: 'userhome',
+                element: <UserHome></UserHome>
             },
             {
-                path:'payment',
-                element:<Payment></Payment>
+                path: 'payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'myclasses',
+                element: <MyClasses></MyClasses>
+            },      
+            {
+                path:'instructorhome',
+                element:<InstructorHome></InstructorHome>
+            },      
+            {
+                path: 'addclass',
+                element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
+            },
+            {
+                path:'adminhome',
+                element:<AdminHome></AdminHome>
             },
             {
                 path: 'allusers',
                 element: <AllUsers></AllUsers>
-            },
-            {
-                path: 'addclass',
-                element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
                 path: 'manageclass',

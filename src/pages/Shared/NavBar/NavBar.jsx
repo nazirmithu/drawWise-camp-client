@@ -1,12 +1,16 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaBookOpen } from 'react-icons/fa';
+import { FaBookOpen, FaHome } from 'react-icons/fa';
 import useSelectedClass from '../../../components/hooks/useSelectedClass';
+import useAdmin from '../../../components/hooks/useAdmin';
+import useInstructor from '../../../components/hooks/useInstructor';
 
 const NavBar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
     const [cart] = useSelectedClass();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     const handleLogOut = () => {
         handleSignOut()
@@ -20,7 +24,7 @@ const NavBar = () => {
         <li><Link to='/allclasses'>Classes</Link></li>
         {
             user ? <>
-                <li><Link to='/order/salad'>Dashboard </Link></li>
+                {/* <li><Link to='/order/salad'>Dashboard </Link></li> */}
                 <li>
                     <Link to='/dashboard/myclasses'>
                         <button className="btn">
@@ -30,6 +34,22 @@ const NavBar = () => {
                     </Link>
                 </li>
             </> : ''
+        }
+        {
+            isAdmin ? <>
+                <li><Link to='/dashboard/adminhome'><FaHome />Dashboard</Link></li>
+               
+
+            </> :
+                isInstructor ? <>
+                    <li><Link to='/dashboard/instructorhome'><FaHome />Dashboard</Link></li>
+                   
+                </> :
+                  user?  <>
+
+                        <li><Link to='/dashboard/userhome'><FaHome />Dashboard</Link></li>
+                        
+                    </>:''
         }
 
         {

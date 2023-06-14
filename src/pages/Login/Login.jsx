@@ -44,7 +44,7 @@ const Login = () => {
                         <Lottie animationData={loginAnimation} />
                     </div>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl mt-20 bg-base-100">
+                <div className="card shadow-2xl mt-20 bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <p className='text-5xl text-center font-serif'>Login</p>
                         <p className='font-serif text-center'>Sign in to access your account</p>
