@@ -12,11 +12,14 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -35,22 +38,26 @@ const router = createBrowserRouter([
     {
         path: 'dashboard',
         element: <Dashboard></Dashboard>,
-        children:[
+        children: [
             {
-                path:'myclasses',
-                element:<MyClasses></MyClasses>
+                path: 'myclasses',
+                element: <MyClasses></MyClasses>
             },
             {
-                path:'allusers',
-                element:<AllUsers></AllUsers>
+                path:'payment',
+                element:<Payment></Payment>
             },
             {
-                path:'addclass',
+                path: 'allusers',
+                element: <AllUsers></AllUsers>
+            },
+            {
+                path: 'addclass',
                 element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
-                path:'manageclass',
-                element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
+                path: 'manageclass',
+                element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
             }
         ]
     },

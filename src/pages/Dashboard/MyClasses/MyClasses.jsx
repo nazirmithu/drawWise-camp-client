@@ -1,6 +1,7 @@
-import { FaTrashAlt, FaWallet } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import useSelectedClass from "../../../components/hooks/useSelectedClass";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyClasses = () => {
     const [cart, refetch] = useSelectedClass();
@@ -75,9 +76,11 @@ const MyClasses = () => {
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost text-red-600 btn-lg"><FaTrashAlt /></button>
                                 </td>
-                                <td>
-                                    <button className="btn btn-ghost text-red-600 btn-lg"><FaWallet /></button>
-                                </td>
+                                <Link to='/dashboard/payment'>
+                                    <td>
+                                        <button className="btn btn-ghost text-red-600 btn-lg">Pay</button>
+                                    </td>
+                                </Link>
                             </tr>)
                         }
 
@@ -89,3 +92,5 @@ const MyClasses = () => {
 };
 
 export default MyClasses;
+
+{/* <FaWallet /> */ }

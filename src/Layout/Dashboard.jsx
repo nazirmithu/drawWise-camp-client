@@ -25,7 +25,7 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-red-200 text-base-content">
 
-                   
+
                     {isAdmin ? <>
                         <li><NavLink to='/dashboard/home'><FaHome />Admin Home</NavLink></li>
                         <li><NavLink to='/dashboard/manageclass'><FaBookReader />Manage Classes</NavLink></li>
