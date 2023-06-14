@@ -7,7 +7,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://draw-wise-camp-server.vercel.app'
 });
 
 const useAxiosSecure = () => {

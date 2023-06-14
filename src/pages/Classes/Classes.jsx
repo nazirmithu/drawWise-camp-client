@@ -16,7 +16,7 @@ const Classes = ({ item }) => {
         console.log(item)
         if (user && user.email) {
             const selectedClass = { classId: _id, class_image, class_name, instructor_name, price, email: user.email }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://draw-wise-camp-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

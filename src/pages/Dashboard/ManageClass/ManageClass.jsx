@@ -3,7 +3,7 @@ import useData from "../../../components/hooks/useData";
 const ManageClass = () => {
     const [allData] = useData();
     const handleApprove = id => {
-        fetch(`http://localhost:5000/allData/${id}`, {
+        fetch(`https://draw-wise-camp-server.vercel.app/allData/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const ManageClass = () => {
 
     const handleDeny = id => {
         console.log(id)
-        fetch(`http://localhost:5000/allData/${id}`, {
+        fetch(`https://draw-wise-camp-server.vercel.app/allData/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

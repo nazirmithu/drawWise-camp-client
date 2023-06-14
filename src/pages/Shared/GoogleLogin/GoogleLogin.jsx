@@ -17,7 +17,7 @@ const GoogleLogin = () => {
                 // console.log(loggedInUser)
 
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL }
-                fetch('http://localhost:5000/users', {
+                fetch('https://draw-wise-camp-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

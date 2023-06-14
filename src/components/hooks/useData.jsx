@@ -6,7 +6,7 @@ const useData = () => {
     const { data: allData = [], isLoading: loading } = useQuery({
         queryKey: ['allData'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allData')
+            const res = await fetch('https://draw-wise-camp-server.vercel.app/allData')
             return res.json()
 
         }
