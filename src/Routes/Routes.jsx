@@ -18,6 +18,7 @@ import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 import AllInstructor from "../pages/AllInstructor/AllInstructor";
 import InstructorClass from "../pages/Dashboard/InstructorClass/InstructorClass";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
     {
@@ -81,7 +82,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'allusers',
-                element: <AdminRoute><AdminRoute></AdminRoute></AdminRoute>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path: 'manageclass',
